@@ -28,6 +28,17 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Books API',
+    'DESCRIPTION': '',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +50,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'DjangoRESTBasic.books_api',
     'rest_framework',
+    'drf_spectacular',
+    'rest_framework.authtoken',
+    'DjangoRESTBasic.accounts',
 ]
 
 MIDDLEWARE = [
